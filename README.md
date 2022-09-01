@@ -6,6 +6,7 @@ Virtual Store Phase 1: For this assignment, you will be starting the process of 
 
 * lets start with UML diagram 
 
+![link](./src/componants/store/image/Screenshot%20(525).png)
 
 * and here some result for my work 
 
