@@ -2,6 +2,7 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import '../App.css'
 
@@ -18,14 +19,22 @@ const Products = props => {
              <img src="https://i.pinimg.com/564x/a5/2e/3e/a52e3ead549f0fef288d9d074b979df2--computer.jpg"alt='hello'></img>
              </div>
              }
-            <Grid container >
-                {props.products.filter(product => product.category === props.active).map(product => {
+            <Grid container   >
+                {props.products.filter(product => product.category === props.active).map((product,idx) => {
                     console.log(product.category,"11111111111111111111")
                     console.log(props.active,"22222222222222222222")
                     return (
-                        <Grid item >
-                            <Card variant="outlined" >
-                                <img src='https://graphicsfamily.com/wp-content/uploads/edd/2021/08/Free-Download-Creative-Idea-Logo-Design-scaled.jpg'alt="hi" width="250x" height="150px"></img>
+                        <>
+                        
+                        <Grid item xs={2} sm={4} md={4}  >
+                            <Card variant="outlined" key={idx} sx={{
+                        maxWidth: 345 }}>
+                            <CardMedia
+                            component="img"
+                            height="200"
+                            width="150"
+                            image={product.image}
+                            alt="product image"/>
                                 <CardContent>
                                     <Typography variant="h5">{product.name}</Typography>
                                     <Typography variant="body2">{product.description}</Typography>
@@ -36,6 +45,7 @@ const Products = props => {
                             </Card>
                             
                         </Grid>
+                        </>
                     )
                 })}
             </Grid>
