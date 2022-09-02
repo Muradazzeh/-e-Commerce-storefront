@@ -1,7 +1,7 @@
 # LAB - Application State with Redux 
 Virtual Store Phase 1: For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server
 
-### * this is the netlify link [ link for netlify](https://63113e15177d050b00826c8d--dynamic-cannoli-6b0555.netlify.app/)
+### * this is the netlify link [ link for netlify](https://dynamic-cannoli-6b0555.netlify.app/)
 * I started with the first phase that we will use redux to show data 
 
 * lets start with UML diagram 
@@ -13,3 +13,7 @@ Virtual Store Phase 1: For this assignment, you will be starting the process of 
 ![link](./src/componants/store/image/Screenshot%20(523).png)
 
 ![link](./src/componants/store/image/Screenshot%20(524).png)
+
+![link](./src/componants/store/image/Screenshot%20(527).png)
+
+
