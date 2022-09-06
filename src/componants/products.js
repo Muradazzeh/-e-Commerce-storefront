@@ -4,6 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import {add,reset} from './store/cartAction'
 import '../App.css'
 
 import { connect } from 'react-redux';
@@ -41,6 +43,9 @@ const Products = props => {
                                     <Typography variant="body1">${product.price}</Typography>
                                     <Typography variant="body1">{product.inventory}</Typography>
                                 </CardContent>
+                                <Button onClick={() => props.add(product)}> Add to cart </Button> 
+                                <> ................... </>
+                                <Button > View details</Button>
 
                             </Card>
                             
@@ -56,8 +61,9 @@ const Products = props => {
 const mapStateToProps = state => ({
     products: state.products.products,
     catagories : state.catagories.catagories,
-    active : state.catagories.active
+    active : state.catagories.active,
+    itemCount: state.cartReducer.itemCount
     
 });
-
-export default connect(mapStateToProps)(Products);
+const mapDispatchToProps = {add,reset}
+export default connect(mapStateToProps,mapDispatchToProps)(Products);
