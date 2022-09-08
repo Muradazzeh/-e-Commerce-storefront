@@ -1,11 +1,18 @@
+import react , {useEffect} from 'react'
 import { connect } from "react-redux"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'reactstrap'
 import { select ,reset } from "./store/action"
+import {getRemoteData} from './store/action2'
 // import { active } from "./store/cartAction"
 import { useNavigate } from 'react-router-dom';
 const Catagories = props =>{
+  
+useEffect(()=>{
+    props.getRemoteData()
+},[])
+
     let navigate=useNavigate()
     return (
         <>
@@ -14,7 +21,7 @@ const Catagories = props =>{
         
             {props.catagories.map((person, idx) =>
             <div style={{ cursor: 'pointer', float: 'left' }} >
-                <h4 key={idx} onClick={() => props.select(person.name)}> {person.name}   || -- </h4> 
+                <h4 key={idx} onClick={() =>  props.select(person.name)}> {person.name}   || -- </h4> 
                 </div>
             )}
          
@@ -35,5 +42,5 @@ const mapStateToProps = (state)=>({
     count : state.cartReducer.itemCount
 })
 
-const mapDispatchToProps = {select,reset}
+const mapDispatchToProps = {select,reset,getRemoteData}
 export default connect(mapStateToProps,mapDispatchToProps)(Catagories)

@@ -6,6 +6,7 @@ import Footer from './componants/Footer'
 import Catagories from './componants/Categories'
 import Products from './componants/products'
 import CartItem from './componants/simpleCart'
+
 import './App.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
 
 <Routes>
-<Route path="/" element={[<Catagories/>,<Products/>]}/>
+<Route path="/"  element={[<Catagories/>,<Products/>]}/>
 <Route path="/cart" element={<CartItem/>}/>
 
 </Routes>
