@@ -1,12 +1,11 @@
 let initialState = {
     catagories:[ 
-       {name : 'ELECTRICAL', show : false},
+       {name : 'Electronics', show : false},
       {name : 'FOOD', show : false },
-      {name:'CLOTHES', show : false },
-      {name : 'GAMES',show : false},
-      {name : 'SKIN CARE',show : false},
-      {name : 'BEAUTY & FRAGRANCE',show : false},
-      {name : 'SPORTS',show : false}
+      {name:'Clothes', show : false },
+      {name : 'Shoes',show : false},
+      {name : 'Furniture',show : false},
+      {name : 'Others',show : false}
   ],
   
   }

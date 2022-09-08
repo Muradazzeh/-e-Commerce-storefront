@@ -11,6 +11,7 @@ import '../App.css'
 import { connect } from 'react-redux';
 
 const Products = props => {
+  
 
     return (
         <section>
@@ -22,7 +23,7 @@ const Products = props => {
              </div>
              }
             <Grid container   >
-                {props.products.filter(product => product.category === props.active).map((product,idx) => {
+                {props.products.filter(product => product.category.name === props.active).map((product,idx) => {
                     console.log(product.category,"11111111111111111111")
                     console.log(props.active,"22222222222222222222")
                     return (
@@ -35,10 +36,10 @@ const Products = props => {
                             component="img"
                             height="200"
                             width="150"
-                            image={product.image}
+                            image={product.images}
                             alt="product image"/>
                                 <CardContent>
-                                    <Typography variant="h5">{product.name}</Typography>
+                                    <Typography variant="h5">{product.title}</Typography>
                                     <Typography variant="body2">{product.description}</Typography>
                                     <Typography variant="body1">${product.price}</Typography>
                                     <Typography variant="body1">{product.inventory}</Typography>
@@ -59,7 +60,7 @@ const Products = props => {
 }
 
 const mapStateToProps = state => ({
-    products: state.products.products,
+    products: state.products,
     catagories : state.catagories.catagories,
     active : state.catagories.active,
     itemCount: state.cartReducer.itemCount
