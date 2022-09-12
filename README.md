@@ -1,6 +1,11 @@
 # LAB - Application State with Redux 
 Virtual Store Phase 1: For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server
 
+## final phase is to use redux toolkit
+
+![link](./src/componants/store/image/finall.gif)
+
+
 
 ## phase 2 : combined reducer 
 * required to add shopping cart with functionality for adding item and removing item and this is the result 

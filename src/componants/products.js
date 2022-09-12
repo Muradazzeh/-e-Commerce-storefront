@@ -5,13 +5,13 @@ import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import {add,reset} from './store/cartAction'
+import {add,reset,select} from './store/cartAction'
 import '../App.css'
-
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Products = props => {
-  
+ const navigate= useNavigate()
 
     return (
         <section>
@@ -46,7 +46,7 @@ const Products = props => {
                                 </CardContent>
                                 <Button onClick={() => props.add(product)}> Add to cart </Button> 
                                 <> ................... </>
-                                <Button > View details</Button>
+                                <Button onClick={() => {props.select(product);navigate('./details')}} > View details</Button>
 
                             </Card>
                             
@@ -66,5 +66,5 @@ const mapStateToProps = state => ({
     itemCount: state.cartReducer.itemCount
     
 });
-const mapDispatchToProps = {add,reset}
+const mapDispatchToProps = {add,reset,select}
 export default connect(mapStateToProps,mapDispatchToProps)(Products);
