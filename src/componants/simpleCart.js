@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'reactstrap'
 import {remove} from './store/cartAction'
+import { useNavigate } from 'react-router-dom';
 import './simplecart.css'
 
 const CartItem = props => {
+  const navigate = useNavigate()
 console.log(props,"111111props")
     return (
       <>
@@ -58,20 +60,21 @@ console.log(props,"111111props")
                   > 
                     <polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812" />
                   </svg>
-                  <button
-              type="button"
-            //   className={classNames({ disabled: items && items.length === 0 })}
-            //   onClick={handleProceedCheckout}
-            >
-              PROCEED TO CHECKOUT
-    //         </button>
+             
                 </div>
               </div>
             </li>
+            
           );
         })}
+         <button onClick={()=>{navigate("/checkout")}}
+              type="button"
+         
+            >
+              PROCEED TO CHECKOUT
+    //         </button>
       </ul>
-      
+  
     </section>
     </>
   );

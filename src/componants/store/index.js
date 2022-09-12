@@ -7,7 +7,8 @@ import thunk from 'redux-thunk';
 let reducers = combineReducers({ 
     catagories:catagories , 
     products :products ,
-    cartReducer:cartReducer 
+    cartReducer:cartReducer
+   
 })
 
 const store = () =>{
